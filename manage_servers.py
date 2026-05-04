@@ -2,13 +2,14 @@
 
 
 # Definimos una lista de servidores (nuestro Inventario inicial)
-servers = ["192.168.1.10", "192.168.1.11", "192.168.1.2"]
+servers = ["192.168.1.10", "192.168.1.11", "192.168.1.12"]
 
 print(f"Inventario inicial: {servers}")
 
 # A veces necesitaremos agregar servidores dinamicamente
-new_server = "192.168.1.59"
-servers.append(new_server)  # Anade al final de la lista
+web_server_prod = "192.168.1.60"
+servers.append(web_server_prod)  # Anade al final de la lista
+
 
 # O eliminar uno que salio de mantenimiento
 removed_server = servers.pop(0)  # Elimina el primero
