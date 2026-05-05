@@ -2,6 +2,7 @@
 
 import os
 import subprocess
+import sys
 
 
 def run_automation():
@@ -13,6 +14,7 @@ def run_automation():
     resultado = subprocess.run(["df", "-h"], capture_output=True, text=True)  # [12, 19]
 
     print(resultado.stdout)
+    print(sys.version)
 
 
 if __name__ == "__main__":
