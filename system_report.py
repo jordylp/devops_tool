@@ -7,14 +7,22 @@ import sys
 
 def run_automation():
     print(f"--- Reporte del Sistema en: {os.getcwd()} ---")  # [18]
+    print(f"Directorio actual: {os.getcwd()}")
 
-    # Ejecutamos un comando de linux desde python
-    # 'df -h' muestra el espacio en disco de forma legible
-    print("Verificando espacio en disco...")
-    resultado = subprocess.run(["df", "-h"], capture_output=True, text=True)  # [12, 19]
+    try:
+        print("Verificando espacio en disco...")
 
-    print(resultado.stdout)
-    print(sys.version)
+        resultado = subprocess.run(
+            ["df", "-h"], capture_output=True, text=True
+        )  # [12, 19]
+
+        print(resultado.stdout)
+        print(sys.version)
+
+    except FileNotFoundError:
+        print("X Error: El comando solicitado no se encuentra en el sistema")
+    except Exception as e:
+        print(f"X Ocurrio un error inesperado: {e}")
 
 
 if __name__ == "__main__":
